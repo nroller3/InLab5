@@ -1,0 +1,75 @@
+/**
+ * The BahnCard class for Inlab 5.
+ * 
+ * @author your name(s) go here 
+ * @version February 18, 2016
+ **/
+public class BahnCard
+{
+    private int age;
+    private boolean isStudent;
+
+    public void setAge (int age)
+    {
+        this.age = age;
+    }
+    
+    public void setStudent (boolean flag)
+    {
+        this.isStudent = flag;
+    }
+    
+    public int bahnCard25Price (int desiredClass)
+    {
+        int price = 0;
+        if(age < 19 && desiredClass == 2)
+        {
+            price = 10;
+        }
+        if(age >= 19 && desiredClass == 2)
+        {
+            price = 55;
+        }
+        if(desiredClass == 1)
+        {
+           price = 110;
+        }
+        return price;
+    }
+    
+    public int bahnCard50Price (int desiredClass)
+    {
+        int price = 0;
+        if(desiredClass == 1 && age <= 17 || age >= 60 || age < 27 && isStudent == true)
+        {
+            price = 220;
+        }
+        else if(desiredClass == 1)
+        {
+            price = 440;
+        }
+        if(desiredClass == 2 && age <= 17 || age >= 60 || age < 27 && isStudent == true)
+        {
+            price = 110;
+        }
+        else if(desiredClass == 2)
+        {
+            price = 220;
+        }
+        return price;
+    }
+    
+    public int bahnCard100Price (int desiredClass)
+    {
+        int price = 0;
+        if(desiredClass == 1)
+        {
+            price = 5900;
+        }
+        if(desiredClass == 2)
+        {
+            price = 3500;
+        }
+        return price;
+    }
+}
