@@ -1,8 +1,8 @@
 /**
  * The BahnCard class for Inlab 5.
  * 
- * @author your name(s) go here 
- * @version February 18, 2016
+ * @author Nathan Roller -02254188 
+ * @version 2/18/2016
  **/
 public class BahnCard
 {
@@ -40,7 +40,7 @@ public class BahnCard
     public int bahnCard50Price (int desiredClass)
     {
         int price = 0;
-        if(desiredClass == 1 && age <= 17 || age >= 60 || age < 27 && isStudent == true)
+        if(desiredClass == 1 && (age <= 17 || age >= 60 || (age < 27 && isStudent == true)))
         {
             price = 220;
         }
@@ -48,13 +48,24 @@ public class BahnCard
         {
             price = 440;
         }
-        if(desiredClass == 2 && age <= 17 || age >= 60 || age < 27 && isStudent == true)
-        {
-            price = 110;
-        }
         else if(desiredClass == 2)
         {
-            price = 220;
+            if (age <= 17)
+            {
+                price = 110;
+            }
+            else if (age >= 60)
+            {
+                price = 110;
+            }
+            else if (age < 27 && isStudent == true)
+            {
+                price = 110;
+            }
+            else
+            {
+                price = 220;
+            }
         }
         return price;
     }
